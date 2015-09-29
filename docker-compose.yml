@@ -1,0 +1,15 @@
+api:
+  build: .
+  ports:
+   - "80"
+  links:
+   - rabbitmq
+  command: faafo-api
+worker:
+  build: .
+  links:
+   - rabbitmq
+   - api
+  command: faafo-worker
+rabbitmq:
+  image: rabbitmq:3
