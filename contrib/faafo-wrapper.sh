@@ -17,6 +17,8 @@ if [ "x$ENDPOINT_URL" = "x" ]; then
     fi
 fi
 
+DATABASE_URL="sqlite:////tmp/sqlite.db"
+
 
 sed -i -e "s#transport_url = .*#transport_url = $TRANSPORT_URL#" /etc/faafo/faafo.conf
 sed -i -e "s#database_url = .*#database_url = $DATABASE_URL#" /etc/faafo/faafo.conf
